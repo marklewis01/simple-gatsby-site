@@ -6,3 +6,6 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
+
+# Superseded Files
+/src/_old

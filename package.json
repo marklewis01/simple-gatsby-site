@@ -5,6 +5,7 @@
   "author": "Mark Lewis",
   "dependencies": {
     "@material-ui/core": "^1.2.0",
+    "@material-ui/icons": "^1.1.0",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
@@ -13,9 +14,13 @@
     "gatsby-transformer-remark": "^1.7.41",
     "prop-types": "^15.6.1",
     "react-helmet": "^5.2.0",
-    "react-popper": "^0.10.4"
+    "react-popper": "^0.10.4",
+    "typeface-roboto": "0.0.54"
   },
-  "keywords": ["gatsby", "material ui"],
+  "keywords": [
+    "gatsby",
+    "material ui"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

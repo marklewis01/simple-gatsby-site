@@ -5,9 +5,10 @@ import Helmet from 'react-helmet'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
 
-import Header from '../components/header'
 import Footer from '../components/Footer'
+import Nav from '../components/Nav'
 
+import 'typeface-roboto'
 import './index.scss'
 
 const Layout = ({ children, data }) => (
@@ -21,7 +22,7 @@ const Layout = ({ children, data }) => (
     />
     <CssBaseline />
     <div className="wrapper">
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Nav siteTitle={data.site.siteMetadata.title} />
       <div className="main">{children()}</div>
       <Footer company={data.site.siteMetadata.company} />
     </div>
