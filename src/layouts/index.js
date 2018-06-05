@@ -13,6 +13,7 @@ import './index.scss'
 
 const Layout = ({ children, data }) => (
   <div>
+    <CssBaseline />
     <Helmet
       title="Some Site"
       meta={[
@@ -20,9 +21,8 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <CssBaseline />
     <div className="wrapper">
-      <Nav siteTitle={data.site.siteMetadata.title} />
+      <Nav company={data.site.siteMetadata.company} />
       <div className="main">{children()}</div>
       <Footer company={data.site.siteMetadata.company} />
     </div>

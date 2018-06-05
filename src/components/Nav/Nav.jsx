@@ -10,9 +10,15 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1,
+  },
+  button: {
+    margin: 10,
+    '&:hover': {
+      boxShadow: theme.shadows[2],
+    },
   },
   flex: {
     flex: 1,
@@ -21,13 +27,23 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-}
+  navItem: {
+    '& span': {
+      paddingBottom: 4,
+      paddingTop: 4,
+      '&:hover': {
+        borderBottom: '1px solid',
+        paddingBottom: 3,
+      },
+    },
+  },
+})
 
 function ButtonAppBar(props) {
-  const { classes, siteTitle } = props
+  const { classes, company } = props
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="default">
         <Toolbar>
           <IconButton
             className={classes.menuButton}
@@ -37,9 +53,21 @@ function ButtonAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            <Link to="/">{siteTitle}</Link>
+            <Link to="/">{company}</Link>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button className={classes.navItem}>Features</Button>
+          <Button className={classes.navItem}>Support</Button>
+          <Button className={classes.navItem}>Pricing</Button>
+          <Button variant="outlined" color="primary" className={classes.button}>
+            Sign Up
+          </Button>
+          <Button
+            variant="outlined"
+            color="secondary"
+            className={classes.button}
+          >
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
