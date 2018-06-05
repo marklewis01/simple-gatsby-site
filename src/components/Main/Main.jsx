@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
@@ -12,7 +13,9 @@ const styles = theme => ({
 })
 
 const Main = ({ children, classes }) => (
-  <div className={classes.root}>{children}</div>
+  <Grid container className={classes.root}>
+    {children}
+  </Grid>
 )
 
 export default withStyles(styles)(Main)

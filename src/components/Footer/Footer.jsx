@@ -20,9 +20,17 @@ import {
 } from '../SocialIcons'
 
 const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    margin: `1rem auto`,
+    maxWidth: `60rem`,
+    padding: `0 1rem 1.5rem`,
+  },
   footer: {
-    padding: '2.5rem 0 2rem',
     backgroundColor: theme.palette.primary.light,
+    '& ul': {
+      marginLeft: 0,
+    },
   },
   nav: {
     display: `flex`,
@@ -118,7 +126,7 @@ class Footer extends Component {
 
     return (
       <footer className={classes.footer}>
-        <Grid container justify="space-between" className="container">
+        <Grid container justify="space-between" className={classes.root}>
           <Grid item xs={12} sm={4}>
             <ul>
               <li>
