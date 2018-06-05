@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid'
 import Grow from '@material-ui/core/Grow'
 import Icon from '@material-ui/core/Icon'
 import Paper from '@material-ui/core/Paper'
+import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -18,9 +19,19 @@ import {
   IconPhone,
 } from '../SocialIcons'
 
-import './Footer.scss'
-
 const styles = theme => ({
+  footer: {
+    padding: '2.5rem 0 2rem',
+    backgroundColor: theme.palette.primary.light,
+  },
+  nav: {
+    display: `flex`,
+    margin: `1em auto 0`,
+    maxWidth: '30rem',
+  },
+  newsletterButton: {
+    paddingLeft: 0,
+  },
   paper: {
     padding: theme.spacing.unit,
   },
@@ -32,6 +43,14 @@ const styles = theme => ({
   },
   popperOpen: {
     zIndex: '10',
+  },
+  socialLinks: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    '& li': {
+      padding: '0 20px',
+    },
   },
 })
 
@@ -98,79 +117,113 @@ class Footer extends Component {
     }
 
     return (
-      <footer className="footer footer-fixed">
-        <Grid container>
-          <nav>
-            <Grid item xs={12} sm={6} className="nav-socials">
-              <ul>
-                {Object.keys(icons).map(icon => {
-                  const { stateRef } = icons[icon]
-                  const open = this.state[stateRef]
+      <footer className={classes.footer}>
+        <Grid container justify="space-between" className="container">
+          <Grid item xs={12} sm={4}>
+            <ul>
+              <li>
+                <Typography variant="body2">Article One</Typography>
+              </li>
+              <li>
+                <Typography variant="body2">Article Two</Typography>
+              </li>
+              <li>
+                <Typography variant="body2">Article Three</Typography>
+              </li>
+            </ul>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <ul>
+              <li>
+                <Typography variant="body2">Article One</Typography>
+              </li>
+              <li>
+                <Typography variant="body2">Article Two</Typography>
+              </li>
+              <li>
+                <Typography variant="body2">Article Three</Typography>
+              </li>
+            </ul>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Typography variant="title">Newsletter</Typography>
+            <Typography variant="body1">
+              Receive our monthly newsletter.
+            </Typography>
+            <form>
+              <TextField
+                id="full-width"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                placeholder="Your email address"
+                autoComplete="email"
+                fullWidth
+                margin="normal"
+              />
+            </form>
+            <Button className={classes.newsletterButton}>Subscribe</Button>
+          </Grid>
+        </Grid>
+        <Grid container className="container" justify="center">
+          <Grid item>
+            <ul className={classes.socialLinks}>
+              {Object.keys(icons).map(icon => {
+                const { stateRef } = icons[icon]
+                const open = this.state[stateRef]
 
-                  return (
-                    <li key={icons[icon].id}>
-                      <Manager>
-                        <Target>
-                          <Link to={icons[icon].url}>
-                            <Icon
-                              aria-describedby={icons[icon].describedby}
-                              onMouseOver={() =>
-                                this.handlePopperOpen({ value: icons[icon].id })
-                              }
-                              onMouseOut={() =>
-                                this.handlePopperClose({
-                                  value: icons[icon].id,
-                                })
-                              }
-                            >
-                              {icons[icon].C}
-                            </Icon>
-                          </Link>
-                        </Target>
-                        <Popper
-                          placement="right-start"
-                          modifiers={{
-                            offset: { enabled: true, offset: '-5, 10' },
-                          }}
-                          eventsEnabled={open}
-                          className={
-                            !open ? classes.popperClose : classes.popperOpen
-                          }
-                        >
-                          <Grow in={open} style={{ transformOrigin: '0 0 0' }}>
-                            <Paper
-                              id="react-popper-tooltip"
-                              className={classes.paper}
-                              role="tooltip"
-                              aria-hidden={!this.state[icon]}
-                              elevation={8}
-                            >
-                              <Typography>{icons[icon].text}</Typography>
-                            </Paper>
-                          </Grow>
-                        </Popper>
-                      </Manager>
-                    </li>
-                  )
-                })}
-              </ul>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <ul>
-                <li>Item One</li>
-                <li>Item Two</li>
-                <li>Item Three</li>
-              </ul>
-            </Grid>
-            <div className="rss">
-              <Button>Subscribe</Button>
-            </div>
-          </nav>
-
-          <Grid item xs={12} className="copyright">
-            <p>
-              <small>{company} &copy; 2018</small>
-            </p>
+                return (
+                  <li key={icons[icon].id}>
+                    <Manager>
+                      <Target>
+                        <Link to={icons[icon].url}>
+                          <Icon
+                            aria-describedby={icons[icon].describedby}
+                            onMouseOver={() =>
+                              this.handlePopperOpen({ value: icons[icon].id })
+                            }
+                            onMouseOut={() =>
+                              this.handlePopperClose({
+                                value: icons[icon].id,
+                              })
+                            }
+                          >
+                            {icons[icon].C}
+                          </Icon>
+                        </Link>
+                      </Target>
+                      <Popper
+                        placement="top"
+                        modifiers={{
+                          offset: { enabled: true, offset: '0, 15' },
+                        }}
+                        eventsEnabled={open}
+                        className={
+                          !open ? classes.popperClose : classes.popperOpen
+                        }
+                      >
+                        <Grow in={open} style={{ transformOrigin: '0 0 0' }}>
+                          <Paper
+                            id="react-popper-tooltip"
+                            className={classes.paper}
+                            role="tooltip"
+                            aria-hidden={!this.state[icon]}
+                            elevation={8}
+                          >
+                            <Typography>{icons[icon].text}</Typography>
+                          </Paper>
+                        </Grow>
+                      </Popper>
+                    </Manager>
+                  </li>
+                )
+              })}
+            </ul>
+          </Grid>
+        </Grid>
+        <Grid container justify="center" className="container">
+          <Grid item className="copyright">
+            <Typography variant="caption">{company} &copy; 2018</Typography>
           </Grid>
         </Grid>
       </footer>
