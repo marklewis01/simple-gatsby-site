@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
 
 import Footer from '../components/Footer'
+import Main from '../components/Main'
 import Nav from '../components/Nav'
 
 import 'typeface-roboto'
@@ -24,7 +25,7 @@ const Layout = ({ children, data }) => (
     />
     <div className="wrapper">
       <Nav company={data.site.siteMetadata.company} />
-      <div className="main">{children()}</div>
+      <Main>{children()}</Main>
       <Footer company={data.site.siteMetadata.company} />
     </div>
   </div>

@@ -4,16 +4,14 @@ import Link from 'gatsby-link'
 
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
   button: {
     margin: 10,
     '&:hover': {
@@ -42,9 +40,12 @@ const styles = theme => ({
 function ButtonAppBar(props) {
   const { classes, company } = props
   return (
-    <div className={classes.root}>
-      <AppBar position="static" color="default">
-        <Toolbar>
+    <AppBar position="static" color="default">
+      <Toolbar>
+        <Typography variant="title" color="inherit" className={classes.flex}>
+          <Link to="/">{company}</Link>
+        </Typography>
+        <Hidden mdUp>
           <IconButton
             className={classes.menuButton}
             color="inherit"
@@ -52,25 +53,30 @@ function ButtonAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            <Link to="/">{company}</Link>
-          </Typography>
-          <Button className={classes.navItem}>Features</Button>
-          <Button className={classes.navItem}>Support</Button>
-          <Button className={classes.navItem}>Pricing</Button>
-          <Button variant="outlined" color="primary" className={classes.button}>
-            Sign Up
-          </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className={classes.button}
-          >
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+        </Hidden>
+        <Hidden smDown>
+          <div>
+            <Button className={classes.navItem}>Features</Button>
+            <Button className={classes.navItem}>Support</Button>
+            <Button className={classes.navItem}>Pricing</Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              className={classes.button}
+            >
+              Sign Up
+            </Button>
+            <Button
+              variant="outlined"
+              color="secondary"
+              className={classes.button}
+            >
+              Login
+            </Button>
+          </div>
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   )
 }
 
