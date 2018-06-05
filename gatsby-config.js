@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/simple-gatsby-site`,
   siteMetadata: {
     title: `Some Site v0.2`,
     company: `ACME Studios Ltd`,
