@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import { Manager, Target, Popper } from 'react-popper'
 
 import Button from '@material-ui/core/Button'
@@ -11,7 +12,6 @@ import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 
-import Link from 'gatsby-link'
 import {
   IconGitHub,
   IconLinkedIn,
@@ -28,9 +28,7 @@ const styles = theme => ({
   },
   footer: {
     backgroundColor: theme.palette.primary.light,
-    '& ul': {
-      marginLeft: 0,
-    },
+    paddingBottom: `1.5rem`,
   },
   nav: {
     display: `flex`,
@@ -62,7 +60,7 @@ const styles = theme => ({
   },
 })
 
-class Footer extends Component {
+class Footer extends React.Component {
   state = {
     popperGitHub: false,
     popperLinkedIn: false,
@@ -92,9 +90,8 @@ class Footer extends Component {
   }
 
   render() {
-    const { classes, company } = this.props
+    const { classes, company, blogPosts } = this.props
     const { popperGitHub, popperLinkedIn, popperPhone } = this.state
-
     const icons = {
       github: {
         C: <IconGitHub />,
@@ -123,27 +120,24 @@ class Footer extends Component {
         stateRef: 'popperPhone',
       },
     }
-
     return (
       <footer className={classes.footer}>
         <Grid container justify="space-between" className={classes.root}>
           <Grid item xs={12} sm={4}>
             <ul>
-              <li>
-                <Typography variant="body2">Article One</Typography>
-              </li>
-              <li>
-                <Typography variant="body2">Article Two</Typography>
-              </li>
-              <li>
-                <Typography variant="body2">Article Three</Typography>
-              </li>
+              {blogPosts.map(({ node }, i) => (
+                <Typography key={i} variant="body2">
+                  <Link to={node.frontmatter.path}>
+                    <li>{node.frontmatter.title}</li>
+                  </Link>
+                </Typography>
+              ))}
             </ul>
           </Grid>
           <Grid item xs={12} sm={4}>
             <ul>
               <li>
-                <Typography variant="body2">Article One</Typography>
+                <Typography variant="body2">Features</Typography>
               </li>
               <li>
                 <Typography variant="body2">Article Two</Typography>

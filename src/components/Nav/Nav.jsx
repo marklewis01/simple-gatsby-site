@@ -56,9 +56,13 @@ function ButtonAppBar(props) {
         </Hidden>
         <Hidden smDown>
           <div>
-            <Button className={classes.navItem}>Features</Button>
+            <Link to="/features">
+              <Button className={classes.navItem}>Features</Button>
+            </Link>
+            <Link to="/pricing">
+              <Button className={classes.navItem}>Pricing</Button>
+            </Link>
             <Button className={classes.navItem}>Support</Button>
-            <Button className={classes.navItem}>Pricing</Button>
             <Button
               variant="outlined"
               color="primary"

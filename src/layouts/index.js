@@ -13,23 +13,28 @@ import 'typeface-roboto'
 import './index.scss'
 import './theme.scss'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <CssBaseline />
-    <Helmet
-      title="Some Site"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <div className="wrapper">
-      <Nav company={data.site.siteMetadata.company} />
-      <Main>{children()}</Main>
-      <Footer company={data.site.siteMetadata.company} />
+const Layout = ({ children, data }) => {
+  return (
+    <div>
+      <CssBaseline />
+      <Helmet
+        title={data.site.siteMetadata.company}
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' },
+        ]}
+      />
+      <div className="wrapper">
+        <Nav company={data.site.siteMetadata.company} />
+        <Main>{children()}</Main>
+        <Footer
+          company={data.site.siteMetadata.company}
+          blogPosts={data.footerPosts.edges}
+        />
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.func,
@@ -43,6 +48,44 @@ export const query = graphql`
       siteMetadata {
         title
         company
+      }
+    }
+    allFile (
+      filter: {relativePath: {regex: "/pages/((?!page).)*\\.js$/" } }
+    ) {
+      edges {
+        node {
+          relativePath
+          name
+          base
+          id
+        }
+      }
+    }
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+          }
+        }
+      }
+    }
+    footerPosts: allMarkdownRemark (
+      limit: 4
+      filter: { frontmatter: {published:{ eq: true} } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {      
+        node {
+          frontmatter { 
+            title
+            path
+            published
+            date
+          }
+        }
       }
     }
   }
