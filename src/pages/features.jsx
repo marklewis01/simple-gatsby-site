@@ -19,7 +19,9 @@ const FeaturesPage = () => (
     <Grid item xs={12}>
       <Container>
         <Grid item xs={12}>
-          <Typography variant="display1">Hi from the Features page</Typography>
+          <Typography variant="display2" align="center">
+            Features
+          </Typography>
           <br />
           <hr />
           <Typography variant="body1">
