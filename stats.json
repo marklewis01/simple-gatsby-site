@@ -1,56 +1,52 @@
 {
   "assetsByChunkName": {
     "path---third-post": [
-      "path---third-post-308e479073dee28017d6.js",
-      "path---third-post-308e479073dee28017d6.js.map"
+      "path---third-post-f1e810ad989c2ac8736c.js",
+      "path---third-post-f1e810ad989c2ac8736c.js.map"
     ],
     "path---second-post": [
-      "path---second-post-89e6b5c06edf960876fa.js",
-      "path---second-post-89e6b5c06edf960876fa.js.map"
+      "path---second-post-b8184ed450904a6e080a.js",
+      "path---second-post-b8184ed450904a6e080a.js.map"
     ],
     "path---fifth-post": [
-      "path---fifth-post-5efe90066ebc367f0311.js",
-      "path---fifth-post-5efe90066ebc367f0311.js.map"
-    ],
-    "component---src-pages-index-js": [
-      "component---src-pages-index-js-3ee8401be6a56ef16b3c.js",
-      "component---src-pages-index-js-3ee8401be6a56ef16b3c.js.map"
+      "path---fifth-post-a9eaf3aeae1c077ad588.js",
+      "path---fifth-post-a9eaf3aeae1c077ad588.js.map"
     ],
     "component---src-pages-pricing-jsx": [
-      "component---src-pages-pricing-jsx-ca7adfc86fec47f4034b.js",
-      "component---src-pages-pricing-jsx-ca7adfc86fec47f4034b.js.map"
+      "component---src-pages-pricing-jsx-6026445199d47b47a50b.js",
+      "component---src-pages-pricing-jsx-6026445199d47b47a50b.js.map"
+    ],
+    "path---blog": [
+      "path---blog-28b88a900ada03e3f21c.js",
+      "path---blog-28b88a900ada03e3f21c.js.map"
     ],
     "path---features": [
       "path---features-a0e39f21c11f6a62c5ab.js",
       "path---features-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---": [
-      "path----89925a2a9fabbe737ae3.js",
-      "path----89925a2a9fabbe737ae3.js.map"
+      "path----d3fdeeb4e7ff67f2ed61.js",
+      "path----d3fdeeb4e7ff67f2ed61.js.map"
     ],
     "component---src-pages-features-jsx": [
-      "component---src-pages-features-jsx-5cd8a3ab2f24360ce34f.js",
-      "component---src-pages-features-jsx-5cd8a3ab2f24360ce34f.js.map"
+      "component---src-pages-features-jsx-77db6060fe1b6e2ae50e.js",
+      "component---src-pages-features-jsx-77db6060fe1b6e2ae50e.js.map"
     ],
     "path---pricing": [
       "path---pricing-a0e39f21c11f6a62c5ab.js",
       "path---pricing-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---first-post": [
-      "path---first-post-a2e063ad2566ffeec07c.js",
-      "path---first-post-a2e063ad2566ffeec07c.js.map"
+      "path---first-post-0f1a84f01814a7815844.js",
+      "path---first-post-0f1a84f01814a7815844.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-54c54eb2602962574e19.js",
-      "component---src-layouts-index-js-54c54eb2602962574e19.js.map"
+      "component---src-layouts-index-js-6aeab19fe2801955d572.js",
+      "component---src-layouts-index-js-6aeab19fe2801955d572.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "component---src-pages-404-js": [
-      "component---src-pages-404-js-effc55c0098134c5aaec.js",
-      "component---src-pages-404-js-effc55c0098134c5aaec.js.map"
     ],
     "commons": [
       "commons-c7217247698cdda398fd.js",
@@ -60,18 +56,30 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "component---src-pages-404-jsx": [
+      "component---src-pages-404-jsx-effc55c0098134c5aaec.js",
+      "component---src-pages-404-jsx-effc55c0098134c5aaec.js.map"
+    ],
+    "component---src-pages-blog-jsx": [
+      "component---src-pages-blog-jsx-7c785e337f176716d186.js",
+      "component---src-pages-blog-jsx-7c785e337f176716d186.js.map"
+    ],
     "component---src-templates-post-jsx": [
-      "component---src-templates-post-jsx-0b3de681904dcb3550a4.js",
-      "component---src-templates-post-jsx-0b3de681904dcb3550a4.js.map"
+      "component---src-templates-post-jsx-73c33fc7945380045ad5.js",
+      "component---src-templates-post-jsx-73c33fc7945380045ad5.js.map"
+    ],
+    "component---src-pages-index-jsx": [
+      "component---src-pages-index-jsx-3ee8401be6a56ef16b3c.js",
+      "component---src-pages-index-jsx-3ee8401be6a56ef16b3c.js.map"
     ],
     "path---another-post": [
-      "path---another-post-26761f8d8216dbe6a9f4.js",
-      "path---another-post-26761f8d8216dbe6a9f4.js.map"
+      "path---another-post-4f544c10a05c59c161ce.js",
+      "path---another-post-4f544c10a05c59c161ce.js.map"
     ],
     "app": [
-      "app-856abeeb501548772963.js",
+      "app-c583f1c7f6577f4c3d20.js",
       "build-js-styles.css",
-      "app-856abeeb501548772963.js.map",
+      "app-c583f1c7f6577f4c3d20.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [
@@ -79,8 +87,8 @@
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---sixth-post": [
-      "path---sixth-post-3691e7e14f8c926b8ba3.js",
-      "path---sixth-post-3691e7e14f8c926b8ba3.js.map"
+      "path---sixth-post-004ff144102190698f1f.js",
+      "path---sixth-post-004ff144102190698f1f.js.map"
     ]
   }
 }
