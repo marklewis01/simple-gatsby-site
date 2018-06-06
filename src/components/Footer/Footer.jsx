@@ -138,13 +138,19 @@ class Footer extends React.Component {
           <Grid item xs={12} sm={4}>
             <ul>
               <li>
-                <Typography variant="body2">Features</Typography>
+                <Typography variant="body2">
+                  <Link to="/features">Features</Link>
+                </Typography>
               </li>
               <li>
-                <Typography variant="body2">Article Two</Typography>
+                <Typography variant="body2">
+                  <Link to="/pricing">Pricing</Link>
+                </Typography>
               </li>
               <li>
-                <Typography variant="body2">Article Three</Typography>
+                <Typography variant="body2">
+                  <Link to="/blog">Articles</Link>
+                </Typography>
               </li>
             </ul>
           </Grid>

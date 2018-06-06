@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
+import { withStyles } from '@material-ui/core/styles'
 
 import Footer from '../components/Footer'
 import Main from '../components/Main'

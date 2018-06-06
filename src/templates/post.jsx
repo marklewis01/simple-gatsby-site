@@ -25,17 +25,23 @@ const Post = ({ classes, data }) => {
       <Grid item xs={12}>
         <Container flex>
           <Grid item xs={8}>
-            <h1>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <Typography variant="display1">{post.frontmatter.title}</Typography>
+            <Typography variant="body1">
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </Typography>
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.sidebarBlog}>
-              <Typography variant="title">Recent Articles</Typography>
+              <Typography variant="headline">Recent Articles</Typography>
               <ul>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
-                  <Link key={node.id} to={node.frontmatter.path}>
-                    <li>{node.frontmatter.title}</li>
-                  </Link>
+                  <li>
+                    <Typography variant="body2">
+                      <Link key={node.id} to={node.frontmatter.path}>
+                        {node.frontmatter.title}
+                      </Link>
+                    </Typography>
+                  </li>
                 ))}
               </ul>
             </Paper>
