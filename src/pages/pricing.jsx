@@ -2,10 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import CardHeader from '@material-ui/core/CardHeader'
 import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -55,6 +51,8 @@ const styles = theme => ({
   sectionLight: {},
   sectionDark: {
     backgroundColor: theme.palette.grey[300],
+    paddingTop: '2rem',
+    paddingBottom: '2rem',
   },
 })
 
@@ -70,10 +68,19 @@ const PricingPage = ({ classes }) => (
           <hr />
           <Grid container justify="center">
             <Grid item xs={8}>
+              <Typography variant="caption" align="center">
+                Inspired by{' '}
+                <a
+                  href="http://getbootstrap.com/docs/4.0/examples/pricing/"
+                  target="_blank"
+                >
+                  this Bootstrap Example
+                </a>.
+              </Typography>
               <Typography variant="subheading" align="center">
                 Quickly build an effective pricing table for your potential
-                customers with this Bootstrap example. It's built with default
-                Bootstrap components and utilities with little customization.
+                customers with this example. It's built with default Matrial-UI
+                components and utilities with little customization.
               </Typography>
             </Grid>
           </Grid>

@@ -21,9 +21,13 @@ const FeaturesPage = ({ classes, data }) => (
           <hr />
           <ul>
             {data.allMarkdownRemark.edges.map(({ node }) => (
-              <Link key={node.id} to={node.frontmatter.path}>
-                <li>{node.frontmatter.title}</li>
-              </Link>
+              <li key={node.id}>
+                <Typography variant="body2">
+                  <Link to={node.frontmatter.path}>
+                    {node.frontmatter.title}
+                  </Link>
+                </Typography>
+              </li>
             ))}
           </ul>
           <hr />

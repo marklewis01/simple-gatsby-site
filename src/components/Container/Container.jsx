@@ -13,6 +13,9 @@ export const styles = theme => {
       maxWidth: `60rem`,
       padding: `0 1rem 1.5rem`,
     },
+    center: {
+      justifyContent: 'center',
+    },
     flex: {
       display: 'flex',
     },
@@ -25,6 +28,7 @@ class Container extends React.Component {
       children,
       classes,
       className: classNameProp,
+      center,
       flex,
       ...other
     } = this.props
@@ -33,6 +37,7 @@ class Container extends React.Component {
       classes.root,
       {
         [classes.flex]: flex,
+        [classes.center]: center,
       },
       classNameProp
     )
@@ -46,10 +51,12 @@ class Container extends React.Component {
 }
 
 Container.propTypes = {
+  center: PropTypes.bool,
   flex: PropTypes.bool,
 }
 
 Container.defaultProps = {
+  center: false,
   flex: false,
 }
 
