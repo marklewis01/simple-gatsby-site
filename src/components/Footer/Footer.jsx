@@ -178,7 +178,7 @@ class Footer extends React.Component {
                   <li key={icons[icon].id}>
                     <Manager>
                       <Target>
-                        <Link to={icons[icon].url}>
+                        <a href={icons[icon].url}>
                           <Icon
                             aria-describedby={icons[icon].describedby}
                             onMouseOver={() =>
@@ -192,7 +192,7 @@ class Footer extends React.Component {
                           >
                             {icons[icon].C}
                           </Icon>
-                        </Link>
+                        </a>
                       </Target>
                       <Popper
                         placement="top"

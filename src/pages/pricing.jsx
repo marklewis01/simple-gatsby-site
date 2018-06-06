@@ -107,14 +107,14 @@ const PricingPage = ({ classes }) => (
               </Typography>
               <List className={classes.cardList}>
                 <ListItem className={classes.cardListItem}>
-                  <ListItemIcon>
-                    <CheckCircleIcon />
+                  <ListItemIcon color="secondary">
+                    <CheckCircleIcon color="primary" />
                   </ListItemIcon>
                   <ListItemText primary="10 users included" />
                 </ListItem>
                 <ListItem className={classes.cardListItem}>
                   <ListItemIcon>
-                    <CheckCircleIcon />
+                    <CheckCircleIcon color="secondary" />
                   </ListItemIcon>
                   <ListItemText primary="2 GB of storage" />
                 </ListItem>

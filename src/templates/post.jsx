@@ -13,6 +13,9 @@ const styles = theme => ({
     padding: '1rem',
     backgroundColor: theme.palette.grey[100],
   },
+  blogHomeLink: {
+    marginTop: `2rem`,
+  },
 })
 
 const Post = ({ classes, data }) => {
@@ -27,7 +30,7 @@ const Post = ({ classes, data }) => {
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.sidebarBlog}>
-              <Typography variant="title">Blog Posts</Typography>
+              <Typography variant="title">Recent Articles</Typography>
               <ul>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                   <Link key={node.id} to={node.frontmatter.path}>
@@ -36,6 +39,14 @@ const Post = ({ classes, data }) => {
                 ))}
               </ul>
             </Paper>
+          </Grid>
+          <Grid container className={classes.blogHomeLink}>
+            <Grid item xs={12}>
+              <hr />
+              <Typography variant="body1">
+                <Link to="/blog">Go back to articles main page</Link>
+              </Typography>
+            </Grid>
           </Grid>
         </Container>
       </Grid>

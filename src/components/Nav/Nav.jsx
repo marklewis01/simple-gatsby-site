@@ -62,7 +62,9 @@ function ButtonAppBar(props) {
             <Link to="/pricing">
               <Button className={classes.navItem}>Pricing</Button>
             </Link>
-            <Button className={classes.navItem}>Support</Button>
+            <Link to="/blog">
+              <Button className={classes.navItem}>Articles</Button>
+            </Link>
             <Button
               variant="outlined"
               color="primary"
