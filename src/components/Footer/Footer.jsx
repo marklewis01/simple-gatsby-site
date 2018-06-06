@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { Manager, Target, Popper } from 'react-popper'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
@@ -178,7 +179,7 @@ class Footer extends React.Component {
                   <li key={icons[icon].id}>
                     <Manager>
                       <Target>
-                        <a href={icons[icon].url}>
+                        <OutboundLink href={icons[icon].url}>
                           <Icon
                             aria-describedby={icons[icon].describedby}
                             onMouseOver={() =>
@@ -192,7 +193,7 @@ class Footer extends React.Component {
                           >
                             {icons[icon].C}
                           </Icon>
-                        </a>
+                        </OutboundLink>
                       </Target>
                       <Popper
                         placement="top"

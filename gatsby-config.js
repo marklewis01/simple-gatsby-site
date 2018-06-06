@@ -1,4 +1,4 @@
-import config from './private-config'
+const config = require('./private-config')
 
 module.exports = {
   pathPrefix: `/simple-gatsby-site`,
