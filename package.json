@@ -8,6 +8,7 @@
     "classnames": "^2.2.5",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-source-filesystem": "^1.5.38",
@@ -17,7 +18,10 @@
     "react-popper": "^0.10.4",
     "typeface-roboto": "0.0.54"
   },
-  "keywords": ["gatsby", "material ui"],
+  "keywords": [
+    "gatsby",
+    "material ui"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

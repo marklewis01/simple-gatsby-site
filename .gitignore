@@ -9,3 +9,6 @@ yarn-error.log
 
 # Superseded Files
 /src/_old
+
+# Private Config Files
+private-config.js
