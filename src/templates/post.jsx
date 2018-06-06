@@ -1,22 +1,49 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles'
 
 import Container from '../components/Container'
 
-export default ({ data }) => {
+const styles = theme => ({
+  sidebarBlog: {
+    padding: '1rem',
+    backgroundColor: theme.palette.grey[100],
+  },
+})
+
+const Post = ({ classes, data }) => {
   const { markdownRemark: post } = data
   return (
     <Grid container>
       <Grid item xs={12}>
-        <Container>
-          <h1>{post.frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Container flex>
+          <Grid item xs={8}>
+            <h1>{post.frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className={classes.sidebarBlog}>
+              <Typography variant="title">Blog Posts</Typography>
+              <ul>
+                {data.allMarkdownRemark.edges.map(({ node }) => (
+                  <Link key={node.id} to={node.frontmatter.path}>
+                    <li>{node.frontmatter.title}</li>
+                  </Link>
+                ))}
+              </ul>
+            </Paper>
+          </Grid>
         </Container>
       </Grid>
     </Grid>
   )
 }
+
+export default withStyles(styles)(Post)
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -25,6 +52,17 @@ export const postQuery = graphql`
       frontmatter {
         path
         title
+      }
+    }
+    allMarkdownRemark(limit: 10) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+          }
+        }
       }
     }
   }

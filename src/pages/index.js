@@ -29,18 +29,6 @@ const Index = ({ classes, data }) => {
               <Link to="/page-2/">Go to page 2</Link>
             </Typography>
           </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.sidebarBlog}>
-              <Typography variant="title">Blog Posts</Typography>
-              <ul>
-                {data.allMarkdownRemark.edges.map(({ node }) => (
-                  <Link key={node.id} to={node.frontmatter.path}>
-                    <li>{node.frontmatter.title}</li>
-                  </Link>
-                ))}
-              </ul>
-            </Paper>
-          </Grid>
         </Container>
       </Grid>
     </Grid>
