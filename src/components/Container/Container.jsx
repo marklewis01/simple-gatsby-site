@@ -10,7 +10,7 @@ export const styles = theme => {
     root: {
       display: 'block',
       margin: `1rem auto`,
-      maxWidth: `60rem`,
+      maxWidth: `66rem`,
       padding: `0 1rem 1.5rem`,
     },
     center: {

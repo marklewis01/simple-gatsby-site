@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import Link, { withPrefix } from 'gatsby-link'
 import Img from 'gatsby-image'
 
 import Container from '../components/Container'
@@ -20,8 +20,60 @@ const styles = theme => ({
   featureCard: {
     textAlign: 'center',
   },
+  featureCardButton: {
+    marginBottom: `2rem`,
+    marginTop: `3rem`,
+  },
+  featureContainer: {
+    marginTop: `1rem`,
+    marginBottom: `1rem`,
+    '&:after': {
+      borderBottom: `1px solid`,
+      borderBottomColor: theme.palette.primary.light,
+      content: `''`,
+      margin: `3rem`,
+      width: `100%`,
+    },
+  },
+  featureContainerLeft: {
+    marginTop: `1rem`,
+    '&:after': {
+      borderBottom: `1px solid`,
+      borderBottomColor: theme.palette.primary.light,
+      content: `''`,
+      margin: `3rem`,
+      width: `100%`,
+    },
+    '&:last-child:after': {
+      borderBottom: `none`,
+      marginBottom: `unset`,
+    },
+    '@media (max-width: 600px)': {
+      flexFlow: 'wrap-reverse',
+    },
+  },
   featureImgRound: {
     borderRadius: '50%',
+    maxWidth: `150px`,
+    maxHeight: `150px`,
+    margin: `0 auto 1.45rem`,
+  },
+  headline: {
+    fontWeight: 300,
+    '& span': {
+      color: theme.palette.primary.light,
+      fontWeight: '200',
+    },
+  },
+  imageCaptionCamera: {
+    marginBottom: `1rem`,
+  },
+  imageCaptions: {
+    marginLeft: `2rem`,
+    marginRight: `2rem`,
+  },
+  productImages: {
+    borderRadius: '10%',
   },
   sectionLight: {
     paddingTop: '3rem',
@@ -46,10 +98,19 @@ const FeaturesPage = ({ classes, data }) => (
           <hr />
           <Grid container justify="center">
             <Grid item xs={8}>
+              <Typography variant="caption" align="center">
+                Inspired by{' '}
+                <a
+                  href="http://getbootstrap.com/docs/4.0/examples/carousel/"
+                  target="_blank"
+                >
+                  this Bootstrap Example
+                </a>.
+              </Typography>
               <Typography variant="subheading" align="center">
                 Quickly build an effective pricing table for your potential
-                customers with this Bootstrap example. It's built with default
-                Bootstrap components and utilities with little customization.
+                customers with this example. It's built with default Matrial-UI
+                components and utilities with little customization.
               </Typography>
             </Grid>
           </Grid>
@@ -60,9 +121,10 @@ const FeaturesPage = ({ classes, data }) => (
       <Container>
         <Grid container justify="space-around" spacing={24}>
           <Grid item xs={12} md={4} className={classes.featureCard}>
-            <img
-              src="https://source.unsplash.com/random/150x150"
-              alt=""
+            <Img
+              sizes={data.camera.childImageSharp.sizes}
+              title="camera"
+              alt="featured camera"
               className={classes.featureImgRound}
             />
             <Typography variant="headline" align="center">
@@ -73,11 +135,19 @@ const FeaturesPage = ({ classes, data }) => (
               egestas eget quam. Vestibulum id ligula porta felis euismod
               semper.
             </Typography>
+            <Button
+              color="primary"
+              variant="raised"
+              className={classes.featureCardButton}
+            >
+              View details...
+            </Button>
           </Grid>
           <Grid item xs={12} md={4} className={classes.featureCard}>
-            <img
-              src="https://source.unsplash.com/random/150x150"
-              alt=""
+            <Img
+              sizes={data.camera.childImageSharp.sizes}
+              title="camera"
+              alt="featured camera"
               className={classes.featureImgRound}
             />
             <Typography variant="headline" align="center">
@@ -88,11 +158,19 @@ const FeaturesPage = ({ classes, data }) => (
               egestas eget quam. Vestibulum id ligula porta felis euismod
               semper.
             </Typography>
+            <Button
+              color="primary"
+              variant="raised"
+              className={classes.featureCardButton}
+            >
+              View details...
+            </Button>
           </Grid>
           <Grid item xs={12} md={4} className={classes.featureCard}>
-            <img
-              src="https://source.unsplash.com/random/150x150"
-              alt=""
+            <Img
+              sizes={data.camera.childImageSharp.sizes}
+              title="camera"
+              alt="featured camera"
               className={classes.featureImgRound}
             />
             <Typography variant="headline" align="center">
@@ -103,31 +181,66 @@ const FeaturesPage = ({ classes, data }) => (
               egestas eget quam. Vestibulum id ligula porta felis euismod
               semper.
             </Typography>
+            <Button
+              color="primary"
+              variant="raised"
+              className={classes.featureCardButton}
+            >
+              View details...
+            </Button>
           </Grid>
         </Grid>
       </Container>
+      <Typography
+        variant="caption"
+        align="center"
+        className={classes.imageCaptionCamera}
+      >
+        Photo by{' '}
+        <a href="https://unsplash.com/@abrkett">Adam Birkett on Unsplash</a>
+      </Typography>
     </Grid>
     <Grid container className={classes.sectionLight}>
       <Container flex center>
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={12}>
           <Grid
             container
-            spacing={32}
+            spacing={40}
             alignItems="center"
             justify="space-around"
+            className={classes.featureContainerLeft}
           >
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} sm={5}>
               <Img
-                resolutions={data.image1.childImageSharp.resolutions}
-                title="USB image"
+                sizes={data.image1.childImageSharp.sizes}
+                title="white USB plug"
                 alt="some techy image"
+                className={classes.productImages}
               />
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <Typography variant="title" align="left">
-                Vestibulum id ligula.
+              <Typography
+                variant="caption"
+                align="left"
+                className={classes.imageCaptions}
+              >
+                Photo by
+                <a href="https://unsplash.com/@abrkett">
+                  Adam Birkett on Unsplash
+                </a>
               </Typography>
-              <Typography variant="body1" align="left">
+            </Grid>
+            <Grid item xs={12} sm={7}>
+              <Typography
+                variant="display2"
+                align="left"
+                className={classes.headline}
+              >
+                First featurette heading. <span>It'll blow your mind.</span>
+              </Typography>
+              <Typography
+                variant="subheading"
+                align="left"
+                className={classes.headline}
+              >
                 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
                 egestas eget quam.
               </Typography>
@@ -138,42 +251,76 @@ const FeaturesPage = ({ classes, data }) => (
             spacing={40}
             alignItems="center"
             justify="space-around"
+            className={classes.featureContainer}
           >
-            <Grid item xs={12} md={7}>
-              <Typography variant="title" align="left">
-                Vestibulum id ligula.
+            <Grid item xs={12} sm={7}>
+              <Typography
+                variant="display2"
+                align="left"
+                className={classes.headline}
+              >
+                Oh yeah, it's that good. <span>See for yourself.</span>
               </Typography>
-              <Typography variant="body1" align="left">
+              <Typography variant="subheading" align="left">
                 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
                 egestas eget quam.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} sm={5}>
               <Img
-                resolutions={data.image2.childImageSharp.resolutions}
-                title="USB image"
-                alt="some techy image"
+                sizes={data.image2.childImageSharp.sizes}
+                // resolutions={data.image2.childImageSharp.resolutions}
+                title="phone"
+                alt="Photo by Aidan Hancock on Unsplash"
+                className={classes.productImages}
               />
+              <Typography
+                variant="caption"
+                align="right"
+                className={classes.imageCaptions}
+              >
+                Photo by{' '}
+                <a href="https://unsplash.com/@aidanmh">
+                  Aidan Hancock on Unsplash
+                </a>
+              </Typography>
             </Grid>
           </Grid>
           <Grid
             container
-            spacing={32}
+            spacing={40}
             alignItems="center"
             justify="space-around"
+            className={classes.featureContainerLeft}
           >
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} sm={5}>
               <Img
-                resolutions={data.image3.childImageSharp.resolutions}
-                title="USB image"
+                sizes={data.image3.childImageSharp.sizes}
+                // resolutions={data.image3.childImageSharp.resolutions}
+                title="keyboard"
                 alt="some techy image"
+                className={classes.productImages}
               />
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <Typography variant="title" align="left">
-                Vestibulum id ligula.
+              <Typography
+                variant="caption"
+                align="left"
+                className={classes.imageCaptions}
+              >
+                Photo by{' '}
+                <a href="https://unsplash.com/@hugobarbosa">
+                  Hugo Barbosa on Unsplash
+                </a>
               </Typography>
-              <Typography variant="body1" align="left">
+            </Grid>
+            <Grid item xs={12} sm={7}>
+              <Typography
+                variant="display2"
+                align="left"
+                className={classes.headline}
+              >
+                And lastly, this one. <span>Checkmate.</span>
+              </Typography>
+              <Typography variant="subheading" align="left">
                 Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
                 egestas eget quam.
               </Typography>
@@ -187,28 +334,45 @@ const FeaturesPage = ({ classes, data }) => (
 
 export default withStyles(styles)(FeaturesPage)
 
-export const query = graphql`
-  query GatsbyImageSampleQuery {
-    image1: file(relativePath: { eq: "img/feature-1.jpg" }) {
-      childImageSharp {
-        resolutions(width: 300, height: 300) {
-          ...GatsbyImageSharpResolutions
-        }
-      }
-    }
-    image2: file(relativePath: { eq: "img/feature-2.jpg" }) {
-      childImageSharp {
-        resolutions(width: 300, height: 300) {
-          ...GatsbyImageSharpResolutions
-        }
-      }
-    }
-    image3: file(relativePath: { eq: "img/feature-3.jpg" }) {
-      childImageSharp {
-        resolutions(width: 300, height: 300) {
-          ...GatsbyImageSharpResolutions
-        }
+export const squareFeatureImage = graphql`
+  fragment squareImage on File {
+    childImageSharp {
+      sizes(maxWidth: 500, maxHeight: 500) {
+        ...GatsbyImageSharpSizes
       }
     }
   }
 `
+
+export const circleFeatureImage = graphql`
+  fragment circleImage on File {
+    childImageSharp {
+      sizes(maxWidth: 150, maxHeight: 150) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`
+
+export const query = graphql`
+  query featureImages {
+    image1: file(relativePath: { eq: "img/feature-1.jpg" }) {
+      ...squareImage
+    }
+    image2: file(relativePath: { eq: "img/feature-2.jpg" }) {
+      ...squareImage
+    }
+    image3: file(relativePath: { eq: "img/feature-3.jpg" }) {
+      ...squareImage
+    }
+    camera: file(relativePath: { eq: "img/camera-1.jpg" }) {
+      ...circleImage
+    }
+  }
+`
+
+// childImageSharp {
+//   resolutions(width: 300, height: 300) {
+//     ...GatsbyImageSharpResolutions
+//   }
+// }
