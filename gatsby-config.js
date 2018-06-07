@@ -34,6 +34,9 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
+        // need to change this for deploy
+        // path: `${__dirname}/static/`,
+        // for local dev
         path: `${__dirname}/src/img/`,
       },
     },

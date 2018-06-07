@@ -50,6 +50,21 @@ const styles = theme => ({
     },
     '@media (max-width: 600px)': {
       flexFlow: 'wrap-reverse',
+      '&:after': {
+        borderBottom: 'none',
+        margin: `unset`,
+      },
+      '&:before': {
+        borderBottom: `1px solid`,
+        borderBottomColor: theme.palette.primary.light,
+        content: `''`,
+        margin: `3rem`,
+        width: `100%`,
+      },
+      '&:last-child:before': {
+        borderBottom: `none`,
+        marginBottom: `unset`,
+      },
     },
   },
   featureImgRound: {
@@ -94,7 +109,7 @@ const FeaturesPage = ({ classes, data }) => (
           <br />
           <hr />
           <Grid container justify="center">
-            <Grid item xs={8}>
+            <Grid item xs={12} md={8}>
               <Typography variant="caption" align="center">
                 Inspired by{' '}
                 <a
