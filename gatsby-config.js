@@ -34,7 +34,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
-        path: `${__dirname}/static/`,
+        path: `${__dirname}/src/img/`,
       },
     },
     `gatsby-transformer-remark`,

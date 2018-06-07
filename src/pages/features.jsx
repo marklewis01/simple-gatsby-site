@@ -1,5 +1,5 @@
 import React from 'react'
-import Link, { withPrefix } from 'gatsby-link'
+import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
 import Container from '../components/Container'
@@ -64,9 +64,6 @@ const styles = theme => ({
       color: theme.palette.primary.light,
       fontWeight: '200',
     },
-  },
-  imageCaptionCamera: {
-    marginBottom: `1rem`,
   },
   imageCaptions: {
     marginLeft: `2rem`,
@@ -190,15 +187,11 @@ const FeaturesPage = ({ classes, data }) => (
             </Button>
           </Grid>
         </Grid>
+        <Typography variant="caption" align="center">
+          Photo by{' '}
+          <a href="https://unsplash.com/@abrkett">Adam Birkett on Unsplash</a>
+        </Typography>
       </Container>
-      <Typography
-        variant="caption"
-        align="center"
-        className={classes.imageCaptionCamera}
-      >
-        Photo by{' '}
-        <a href="https://unsplash.com/@abrkett">Adam Birkett on Unsplash</a>
-      </Typography>
     </Grid>
     <Grid container className={classes.sectionLight}>
       <Container flex center>
