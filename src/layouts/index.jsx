@@ -11,7 +11,6 @@ import Main from '../components/Main'
 import Nav from '../components/Nav'
 
 import 'typeface-roboto'
-import './index.scss'
 import './theme.scss'
 
 const Layout = ({ children, data }) => {

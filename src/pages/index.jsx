@@ -263,15 +263,6 @@ const Index = ({ classes, data }) => {
             <hr />
             <Grid container justify="center">
               <Grid item xs={8}>
-                <Typography variant="caption" align="center">
-                  Inspired by{' '}
-                  <a
-                    href="http://getbootstrap.com/docs/4.0/examples/pricing/"
-                    target="_blank"
-                  >
-                    this Bootstrap Example
-                  </a>.
-                </Typography>
                 <Typography variant="subheading" align="center">
                   Quickly build an effective pricing table for your potential
                   customers with this example. It's built with default

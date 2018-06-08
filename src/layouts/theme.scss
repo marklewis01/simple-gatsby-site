@@ -2,6 +2,13 @@ $md-primary-color: #000;
 $md-secondary-color: #fff;
 $md-tertiary-color: grey;
 
+body {
+  padding-top: 64px;
+  @media (max-width: 600px) {
+    padding-top: 56px;
+  }
+}
+
 a:link {
   text-decoration: none;
 }
@@ -15,4 +22,5 @@ a:link {
 ul {
   list-style-type: none;
   margin-left: unset;
+  padding-left: unset;
 }

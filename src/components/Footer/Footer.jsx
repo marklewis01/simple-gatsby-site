@@ -23,13 +23,26 @@ import {
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    margin: `1rem auto`,
-    maxWidth: `60rem`,
+    margin: `2rem auto 0`,
+    maxWidth: `66rem`,
     padding: `0 1rem 1.5rem`,
   },
   footer: {
     backgroundColor: theme.palette.primary.light,
+    borderTopColor: theme.palette.primary.main,
+    borderTopStyle: `solid`,
+    borderTopWidth: `3px`,
     paddingBottom: `1.5rem`,
+    color: '#fff',
+    '& a': {
+      color: '#fff',
+    },
+    '& h2': {
+      marginTop: `1.5rem`,
+    },
+  },
+  formTextfield: {
+    marginTop: 0,
   },
   nav: {
     display: `flex`,
@@ -55,6 +68,7 @@ const styles = theme => ({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
+    paddingLeft: 0,
     '& li': {
       padding: '0 20px',
     },
@@ -125,6 +139,9 @@ class Footer extends React.Component {
       <footer className={classes.footer}>
         <Grid container justify="space-between" className={classes.root}>
           <Grid item xs={12} sm={4}>
+            <Typography variant="title" color="inherit">
+              Recent Articles
+            </Typography>
             <ul>
               {blogPosts.map(({ node }, i) => (
                 <Typography key={i} variant="body2">
@@ -136,7 +153,15 @@ class Footer extends React.Component {
             </ul>
           </Grid>
           <Grid item xs={12} sm={4}>
+            <Typography variant="title" color="inherit">
+              Explore
+            </Typography>
             <ul>
+              <li>
+                <Typography variant="body2">
+                  <Link to="/">Home</Link>
+                </Typography>
+              </li>
               <li>
                 <Typography variant="body2">
                   <Link to="/features">Features</Link>
@@ -155,10 +180,16 @@ class Footer extends React.Component {
             </ul>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="title">Newsletter</Typography>
-            <Typography variant="body1">
-              Receive our monthly newsletter.
+            <Typography variant="title" color="inherit">
+              Newsletter
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="body1" color="inherit">
+                  Receive our monthly newsletter.
+                </Typography>
+              </li>
+            </ul>
             <form>
               <TextField
                 id="full-width"
@@ -169,9 +200,12 @@ class Footer extends React.Component {
                 autoComplete="email"
                 fullWidth
                 margin="normal"
+                className={classes.formTextfield}
               />
             </form>
-            <Button className={classes.newsletterButton}>Subscribe</Button>
+            <Button className={classes.newsletterButton} color="inherit">
+              Subscribe
+            </Button>
           </Grid>
         </Grid>
         <Grid container className="container" justify="center">
