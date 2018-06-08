@@ -77,7 +77,7 @@ const styles = theme => ({
     fontWeight: 300,
     '& span': {
       color: theme.palette.primary.light,
-      fontWeight: '200',
+      fontWeight: '100',
     },
   },
   imageCaptions: {
