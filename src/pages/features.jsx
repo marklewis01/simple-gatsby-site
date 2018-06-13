@@ -132,7 +132,7 @@ const FeaturesPage = ({ classes, data }) => (
     <Grid container className={classes.sectionDark} justify="center">
       <Container>
         <Grid container justify="space-around" spacing={24}>
-          <Grid item xs={12} md={4} className={classes.featureCard}>
+          <Grid item xs={12} sm={4} className={classes.featureCard}>
             <Img
               sizes={data.camera.childImageSharp.sizes}
               title="camera"
@@ -155,7 +155,7 @@ const FeaturesPage = ({ classes, data }) => (
               View details...
             </Button>
           </Grid>
-          <Grid item xs={12} md={4} className={classes.featureCard}>
+          <Grid item xs={12} sm={4} className={classes.featureCard}>
             <Img
               sizes={data.camera.childImageSharp.sizes}
               title="camera"
@@ -178,7 +178,7 @@ const FeaturesPage = ({ classes, data }) => (
               View details...
             </Button>
           </Grid>
-          <Grid item xs={12} md={4} className={classes.featureCard}>
+          <Grid item xs={12} sm={4} className={classes.featureCard}>
             <Img
               sizes={data.camera.childImageSharp.sizes}
               title="camera"

@@ -36,7 +36,8 @@ const styles = theme => ({
     height: 650,
     transform: `skewY(-5deg)`,
     '@media (max-width: 960px)': {
-      marginBottom: `-2rem`,
+      height: `500px`,
+      marginBottom: `-4rem`,
     },
     '@media (max-width: 600px)': {
       marginBottom: `-4rem`,
@@ -160,12 +161,12 @@ const Index = ({ classes, data }) => {
                 alignItems="center"
                 className={classes.awardItems}
               >
-                <Grid item xs={3} sm={2}>
+                <Grid item s={12} sm={3} lg={2}>
                   <Icon className={classes.featureIcon}>
                     <LocationCityIcon />
                   </Icon>
                 </Grid>
-                <Grid item xs={9} sm={10}>
+                <Grid item xs={12} sm={9} lg={10}>
                   <Typography variant="title">Worldwide Coverage</Typography>
                   <Typography variant="body1">
                     Donec sed odio dui. Cras justo odio, dapibus ac facilisis
@@ -179,12 +180,12 @@ const Index = ({ classes, data }) => {
                 alignItems="center"
                 className={classes.awardItems}
               >
-                <Grid item xs={3} sm={2}>
+                <Grid item s={12} sm={3} lg={2}>
                   <Icon className={classes.featureIcon}>
                     <NotificationsActiveIcon />
                   </Icon>
                 </Grid>
-                <Grid item xs={9} sm={10}>
+                <Grid item xs={12} sm={9} lg={10}>
                   <Typography variant="title">Instant Notifications</Typography>
                   <Typography variant="body1">
                     Donec sed odio dui. Cras justo odio, dapibus ac facilisis
@@ -193,18 +194,18 @@ const Index = ({ classes, data }) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item item xs={12} sm={6}>
               <Grid
                 container
                 alignItems="center"
                 className={classes.awardItems}
               >
-                <Grid item xs={3} sm={2}>
+                <Grid item s={12} sm={3} lg={2}>
                   <Icon className={classes.featureIcon}>
                     <SmsIcon />
                   </Icon>
                 </Grid>
-                <Grid item xs={9} sm={10}>
+                <Grid item xs={12} sm={9} lg={10}>
                   <Typography variant="title">Automated Chatbots</Typography>
                   <Typography variant="body1">
                     Donec sed odio dui. Cras justo odio, dapibus ac facilisis
@@ -218,12 +219,12 @@ const Index = ({ classes, data }) => {
                 alignItems="center"
                 className={classes.awardItems}
               >
-                <Grid item xs={3} sm={2}>
+                <Grid item s={12} sm={3} lg={2}>
                   <Icon className={classes.featureIcon}>
                     <NetworkCheckIcon />
                   </Icon>
                 </Grid>
-                <Grid item xs={9} sm={10}>
+                <Grid item xs={12} sm={9} lg={10}>
                   <Typography variant="title">Efficiency Reporting</Typography>
                   <Typography variant="body1">
                     Donec sed odio dui. Cras justo odio, dapibus ac facilisis
@@ -236,12 +237,12 @@ const Index = ({ classes, data }) => {
                 alignItems="center"
                 className={classes.awardItems}
               >
-                <Grid item xs={3} sm={2}>
+                <Grid item s={12} sm={3} lg={2}>
                   <Icon className={classes.featureIcon}>
                     <TagFacesIcon />
                   </Icon>
                 </Grid>
-                <Grid item xs={9} sm={10}>
+                <Grid item xs={12} sm={9} lg={10}>
                   <Typography variant="title">Customer Feedback</Typography>
                   <Typography variant="body1">
                     Donec sed odio dui. Cras justo odio, dapibus ac facilisis

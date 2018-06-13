@@ -35,9 +35,9 @@ module.exports = {
       options: {
         name: `img`,
         // need to change this for deploy
-        path: `${__dirname}/static/`,
+        // path: `${__dirname}/static/`,
         // for local dev
-        // path: `${__dirname}/src/img/`,
+        path: `${__dirname}/src/img/`,
       },
     },
     `gatsby-transformer-remark`,
