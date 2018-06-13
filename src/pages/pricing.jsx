@@ -89,7 +89,7 @@ const PricingPage = ({ classes }) => (
     </Grid>
     <Grid container className={classes.sectionDark} justify="center">
       <Container flex>
-        <Grid item xs={12} md={4} className={classes.cardWrapper}>
+        <Grid item xs={12} sm={4} className={classes.cardWrapper}>
           <Paper className={classes.card}>
             <Grid item>
               <Typography
@@ -148,7 +148,7 @@ const PricingPage = ({ classes }) => (
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={4} className={classes.cardWrapper}>
+        <Grid item xs={12} sm={4} className={classes.cardWrapper}>
           <Paper className={classes.card}>
             <Grid item>
               <Typography
@@ -207,7 +207,7 @@ const PricingPage = ({ classes }) => (
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={4} className={classes.cardWrapper}>
+        <Grid item xs={12} sm={4} className={classes.cardWrapper}>
           <Paper className={classes.card}>
             <Grid item>
               <Typography
